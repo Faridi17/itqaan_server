@@ -18,10 +18,10 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-async function syncDB() {
-    await db.sync()
-}
-syncDB()
+// async function syncDB() {
+//     await db.sync()
+// }
+// syncDB()
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
