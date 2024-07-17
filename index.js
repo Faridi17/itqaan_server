@@ -11,17 +11,17 @@ import { fileURLToPath } from "url";
 import { uploadPost } from './controllers/posts.js'
 import { editBlog, uploadBlog } from './controllers/blogs.js'
 import { editRegister, uploadRegister } from './controllers/register.js'
-// import db from './config/database.js'
+import db from './config/database.js'
 
 dotenv.config()
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-// async function syncDB() {
-//     await db.sync()
-// }
-// syncDB()
+async function syncDB() {
+    await db.sync()
+}
+syncDB()
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
